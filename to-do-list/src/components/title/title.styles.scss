@@ -1,0 +1,25 @@
+#titleBar {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, #2c3e50, #ffffff);
+  border-bottom: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  h1 {
+    font-size: 3rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 0.75rem;
+  }
+
+  h5 {
+    font-size: 1rem;
+    color: #2c3e50;
+    font-weight: 400;
+  }
+}
