@@ -1,0 +1,19 @@
+.sign-in-container {
+  width: 100%;
+  max-width: 400px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+
+  form {
+
+    .btn {
+      margin-top: 0.5rem;
+      align-self: center;
+    }
+  }
+
+  @media (max-width: 500px) {
+    padding: 1.25rem;
+  }
+}
