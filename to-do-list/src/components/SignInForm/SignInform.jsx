@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './SignInForm.scss';
 import Button from '../Button/Button';
 import FormInput from '../form-input/form-input';
@@ -22,9 +23,39 @@ const SignInForm = () => {
         
     }
 
+    const navigate = useNavigate();
+
+    const handleSubmit = async(event) => {
+        event.preventDefault();
+
+        try{
+            const response = await fetch('http://localhost:8080/api/auth/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formFields)
+            });
+
+            if(!response){
+                throw new Error('Invalid Username/Password');
+            }
+
+            const data = await response.json();
+            const token = data.token;            
+
+            localStorage.setItem('jwtToken',token);
+
+            resetFormFields();
+
+        }catch(error){
+            console.error(error);
+        }
+    };
+
     return(
         <div className='sign-in-container'>
-            <form>
+            <form onSubmit={handleSubmit} autoComplete='off'>
                 <FormInput
                     type="text"
                     name="username"
