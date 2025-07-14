@@ -47,6 +47,7 @@ const SignInForm = () => {
             localStorage.setItem('jwtToken',token);
 
             resetFormFields();
+            navigate('/dashboard');
 
         }catch(error){
             console.error(error);
