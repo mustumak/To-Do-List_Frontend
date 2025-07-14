@@ -1,0 +1,13 @@
+#dashboard-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f0f4f8;
+
+  #todo-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); // auto-fill grid
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+}
