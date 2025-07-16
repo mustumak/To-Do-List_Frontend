@@ -1,6 +1,6 @@
 import './To-Do-Item.scss';
 
-const TodoItem = ({todo, refreshTodos, onToggle}) => {    
+const TodoItem = ({todo, refreshTodos, onToggle, onEditClick}) => {    
 
     const {title,description,createdAt,dueDate,status} = todo;
 
@@ -26,9 +26,7 @@ const TodoItem = ({todo, refreshTodos, onToggle}) => {
         }
     }
 
-    const handleEdit = () => {
-        
-    }
+    const handleEdit = () => onEditClick(todo);
 
     const handleDelete = async () => {
         try{            

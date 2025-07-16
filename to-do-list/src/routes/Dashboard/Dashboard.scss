@@ -5,9 +5,32 @@
   background: #f0f4f8;
 
   #todo-container {
+    position: relative; // key change to make button position relative to this
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); // auto-fill grid
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 1.5rem;
     padding: 2rem;
+
+    #addTodoBtn {
+      position: absolute;
+      top: -2.2rem;
+      right: 2rem;
+      width: 70px;
+      height: 70px;
+      font-size: 2.5rem;
+      font-weight: bold;
+      border-radius: 50%;
+      color: #ffffff;
+      background-color: #3498db;
+      border: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: #2980b9;
+        transform: scale(1.1);
+      }
+    }
   }
 }
